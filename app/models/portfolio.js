@@ -17,4 +17,19 @@ Portfolio.prototype.add = function(symbol, count){
   this.stocks.push(newStock);
 };
 
+Portfolio.prototype.del = function(symbol, count){
+  for( var i = 0; i < this.stocks.length; i++){
+    if(symbol.toUpperCase() === this.stocks[i].symbol){
+      this.stocks[i].count -= count;
+      if(this.stocks[i].count <= 0){
+        this.stocks.splice(i,1);
+      }
+      return;
+    }else{
+      
+      console.log ('stock not found');
+    }
+  }
+};
+
 module.exports = Portfolio;

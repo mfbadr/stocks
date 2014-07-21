@@ -18,4 +18,6 @@ Stock.getQuote = function(symbol, cb){
   });
 };
 
+
+
 module.exports = Stock;

@@ -28,4 +28,19 @@ describe('portfolio', function(){
 
     });
   });
+  describe('#del', function(){
+    it('should remove a stock from the portfolio/adjust count', function(){
+      var tech = new Portfolio('Test Port');
+      tech.add('aapl', 25);
+      tech.add('amzn', 35);
+      tech.add('aapl', 50);
+
+      tech.del('aapl', 30);
+      tech.del('aapl', 10);
+      tech.del('amzn', 40);
+
+      expect(tech.stocks).to.have.length(1);
+      expect(tech.stocks[0].count).to.equal(35);
+    });
+  });
 });
