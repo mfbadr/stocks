@@ -25,9 +25,6 @@ Portfolio.prototype.del = function(symbol, count){
         this.stocks.splice(i,1);
       }
       return;
-    }else{
-      
-      console.log ('stock not found');
     }
   }
 };

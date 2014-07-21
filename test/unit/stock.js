@@ -16,8 +16,10 @@ describe('Stock', function(){
     });
   });
   describe('.getQuote', function(){
+    this.timeout(15000);
     it('should get a quote from a webservice', function(done){
       Stock.getQuote('aapl', function(quote){
+        setTimeout(15000);
         expect(quote).to.be.at.least(0);
         done();
       });

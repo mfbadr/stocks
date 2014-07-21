@@ -11,7 +11,6 @@ function Stock(symbol, count){
 
 Stock.getQuote = function(symbol, cb){
   var url = 'http://dev.markitondemand.com/Api/v2/Quote/json?symbol=' + symbol.toUpperCase();
-
   request(url, function(error, response, body){
     body = JSON.parse(body);
     cb(body.LastPrice);
