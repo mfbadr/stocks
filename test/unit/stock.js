@@ -12,6 +12,7 @@ describe('Stock', function(){
       expect(aapl).to.be.instanceof(Stock);
       expect(aapl.symbol).to.equal('AAPL');
       expect(aapl.count).to.equal(100);
+      expect(aapl.price).to.equal(0);
     });
   });
 });
