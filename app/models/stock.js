@@ -14,7 +14,6 @@ Stock.getQuote = function(symbol, cb){
 
   request(url, function(error, response, body){
     body = JSON.parse(body);
-    console.log(body.LastPrice);
     cb(body.LastPrice);
   });
 };
