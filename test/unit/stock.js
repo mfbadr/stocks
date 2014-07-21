@@ -15,4 +15,12 @@ describe('Stock', function(){
       expect(aapl.price).to.equal(0);
     });
   });
+  describe('.getQuote', function(){
+    it('should get a quote from a webservice', function(done){
+      Stock.getQuote('aapl', function(quote){
+        expect(quote).to.be.at.least(0);
+        done();
+      });
+    });
+  });  
 });
